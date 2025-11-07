@@ -1,0 +1,156 @@
+dbt-fusion 2.0.0-preview.45
+   Loading profiles.yml
+error: dbt1005: Failed to parse profiles.yml: unknown variant `athena`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `databricks`, `salesforce`
+
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [572ms]
+[0m14:53:52.158727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4781a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2db890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2dbb10>]}
+
+
+============================== 14:53:52.170229 | bad0e7ec-b43a-4faa-8a63-ca5a152ab194 ==============================
+[0m14:53:52.170229 [info ] [MainThread]: Running with dbt=1.10.13
+[0m14:53:52.170516 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'target_path': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt', 'log_format': 'default', 'warn_error': 'None', 'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt/logs', 'use_colors': 'True', 'log_cache_events': 'False', 'write_json': 'True', 'empty': 'False', 'invocation_command': 'dbt compile', 'printer_width': '80', 'debug': 'False'}
+[0m14:53:52.492220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5c3e10>]}
+[0m14:53:52.515907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b72e8b0>]}
+[0m14:53:52.516973 [info ] [MainThread]: Registered adapter: athena=1.9.5
+[0m14:53:52.590200 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m14:53:52.590640 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:53:52.590815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc06a50>]}
+[0m14:53:53.762286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bced4f0>]}
+[0m14:53:53.799767 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt/target/manifest.json
+[0m14:53:53.801345 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt/target/semantic_manifest.json
+[0m14:53:53.910988 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c79b4d0>]}
+[0m14:53:53.911366 [info ] [MainThread]: Found 4 models, 1 seed, 14 data tests, 478 macros
+[0m14:53:53.911579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c660a10>]}
+[0m14:53:53.913039 [info ] [MainThread]: 
+[0m14:53:53.913269 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:53:53.913454 [info ] [MainThread]: 
+[0m14:53:53.913769 [debug] [MainThread]: Acquiring new athena connection 'master'
+[0m14:53:53.917225 [debug] [ThreadPool]: Acquiring new athena connection 'list_awsdatacatalog_default'
+[0m14:53:53.917581 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:53:55.588507 [debug] [ThreadPool]: On list_awsdatacatalog_default: Close
+[0m14:53:55.592376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bad0e7ec-b43a-4faa-8a63-ca5a152ab194', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1117a22d0>]}
+[0m14:53:55.613266 [debug] [Thread-1 (]: Began running node seed.sales_project.sales_data
+[0m14:53:55.614429 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_awsdatacatalog_default, now seed.sales_project.sales_data)
+[0m14:53:55.614990 [debug] [Thread-1 (]: Began compiling node seed.sales_project.sales_data
+[0m14:53:55.623067 [debug] [Thread-1 (]: Began executing node seed.sales_project.sales_data
+[0m14:53:55.623960 [debug] [Thread-1 (]: Finished running node seed.sales_project.sales_data
+[0m14:53:55.624775 [debug] [Thread-1 (]: Began running node model.sales_project.stg_customers
+[0m14:53:55.625317 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.sales_project.sales_data, now model.sales_project.stg_customers)
+[0m14:53:55.625712 [debug] [Thread-1 (]: Began compiling node model.sales_project.stg_customers
+[0m14:53:55.628827 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_project.stg_customers"
+[0m14:53:55.631495 [debug] [Thread-1 (]: Began executing node model.sales_project.stg_customers
+[0m14:53:55.632065 [debug] [Thread-1 (]: Finished running node model.sales_project.stg_customers
+[0m14:53:55.632419 [debug] [Thread-1 (]: Began running node model.sales_project.stg_products
+[0m14:53:55.632751 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_project.stg_customers, now model.sales_project.stg_products)
+[0m14:53:55.633139 [debug] [Thread-1 (]: Began compiling node model.sales_project.stg_products
+[0m14:53:55.636233 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_project.stg_products"
+[0m14:53:55.637212 [debug] [Thread-1 (]: Began executing node model.sales_project.stg_products
+[0m14:53:55.637718 [debug] [Thread-1 (]: Finished running node model.sales_project.stg_products
+[0m14:53:55.638009 [debug] [Thread-1 (]: Began running node model.sales_project.stg_sales
+[0m14:53:55.638287 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_project.stg_products, now model.sales_project.stg_sales)
+[0m14:53:55.638623 [debug] [Thread-1 (]: Began compiling node model.sales_project.stg_sales
+[0m14:53:55.641190 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_project.stg_sales"
+[0m14:53:55.642553 [debug] [Thread-1 (]: Began executing node model.sales_project.stg_sales
+[0m14:53:55.642994 [debug] [Thread-1 (]: Finished running node model.sales_project.stg_sales
+[0m14:53:55.643270 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m14:53:55.643571 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_project.stg_sales, now test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m14:53:55.643887 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m14:53:55.652067 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m14:53:55.655236 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m14:53:55.655609 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m14:53:55.655831 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_customers_customer_name.5c92a78a60
+[0m14:53:55.656060 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.sales_project.not_null_stg_customers_customer_name.5c92a78a60)
+[0m14:53:55.656274 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_customers_customer_name.5c92a78a60
+[0m14:53:55.658624 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_customers_customer_name.5c92a78a60"
+[0m14:53:55.659825 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_customers_customer_name.5c92a78a60
+[0m14:53:55.660215 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_customers_customer_name.5c92a78a60
+[0m14:53:55.662210 [debug] [Thread-1 (]: Began running node test.sales_project.unique_stg_customers_customer_id.c7614daada
+[0m14:53:55.662791 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_customers_customer_name.5c92a78a60, now test.sales_project.unique_stg_customers_customer_id.c7614daada)
+[0m14:53:55.663040 [debug] [Thread-1 (]: Began compiling node test.sales_project.unique_stg_customers_customer_id.c7614daada
+[0m14:53:55.666558 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.unique_stg_customers_customer_id.c7614daada"
+[0m14:53:55.667705 [debug] [Thread-1 (]: Began executing node test.sales_project.unique_stg_customers_customer_id.c7614daada
+[0m14:53:55.668042 [debug] [Thread-1 (]: Finished running node test.sales_project.unique_stg_customers_customer_id.c7614daada
+[0m14:53:55.668255 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_products_product_description.6c9f2000e8
+[0m14:53:55.668468 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.unique_stg_customers_customer_id.c7614daada, now test.sales_project.not_null_stg_products_product_description.6c9f2000e8)
+[0m14:53:55.668676 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_products_product_description.6c9f2000e8
+[0m14:53:55.684384 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_products_product_description.6c9f2000e8"
+[0m14:53:55.685349 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_products_product_description.6c9f2000e8
+[0m14:53:55.685748 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_products_product_description.6c9f2000e8
+[0m14:53:55.685965 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_products_product_id.6373b0acf3
+[0m14:53:55.686272 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_products_product_description.6c9f2000e8, now test.sales_project.not_null_stg_products_product_id.6373b0acf3)
+[0m14:53:55.686469 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_products_product_id.6373b0acf3
+[0m14:53:55.688521 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_products_product_id.6373b0acf3"
+[0m14:53:55.689501 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_products_product_id.6373b0acf3
+[0m14:53:55.689805 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_products_product_id.6373b0acf3
+[0m14:53:55.690052 [debug] [Thread-1 (]: Began running node test.sales_project.unique_stg_products_product_id.7d950a1467
+[0m14:53:55.690252 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_products_product_id.6373b0acf3, now test.sales_project.unique_stg_products_product_id.7d950a1467)
+[0m14:53:55.690457 [debug] [Thread-1 (]: Began compiling node test.sales_project.unique_stg_products_product_id.7d950a1467
+[0m14:53:55.692535 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.unique_stg_products_product_id.7d950a1467"
+[0m14:53:55.693229 [debug] [Thread-1 (]: Began executing node test.sales_project.unique_stg_products_product_id.7d950a1467
+[0m14:53:55.693536 [debug] [Thread-1 (]: Finished running node test.sales_project.unique_stg_products_product_id.7d950a1467
+[0m14:53:55.693716 [debug] [Thread-1 (]: Began running node model.sales_project.mart_sales
+[0m14:53:55.693906 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.unique_stg_products_product_id.7d950a1467, now model.sales_project.mart_sales)
+[0m14:53:55.694065 [debug] [Thread-1 (]: Began compiling node model.sales_project.mart_sales
+[0m14:53:55.695754 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_project.mart_sales"
+[0m14:53:55.697415 [debug] [Thread-1 (]: Began executing node model.sales_project.mart_sales
+[0m14:53:55.698589 [debug] [Thread-1 (]: Finished running node model.sales_project.mart_sales
+[0m14:53:55.700047 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_sales_customer_id.af88ce3793
+[0m14:53:55.700743 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_project.mart_sales, now test.sales_project.not_null_stg_sales_customer_id.af88ce3793)
+[0m14:53:55.701042 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_sales_customer_id.af88ce3793
+[0m14:53:55.703529 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_sales_customer_id.af88ce3793"
+[0m14:53:55.707026 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_sales_customer_id.af88ce3793
+[0m14:53:55.707340 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_sales_customer_id.af88ce3793
+[0m14:53:55.707515 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_sales_product_id.f0a6c99276
+[0m14:53:55.707694 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_sales_customer_id.af88ce3793, now test.sales_project.not_null_stg_sales_product_id.f0a6c99276)
+[0m14:53:55.707854 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_sales_product_id.f0a6c99276
+[0m14:53:55.709839 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_sales_product_id.f0a6c99276"
+[0m14:53:55.710437 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_sales_product_id.f0a6c99276
+[0m14:53:55.710692 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_sales_product_id.f0a6c99276
+[0m14:53:55.710847 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2
+[0m14:53:55.711008 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_sales_product_id.f0a6c99276, now test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2)
+[0m14:53:55.711154 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2
+[0m14:53:55.712661 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2"
+[0m14:53:55.713243 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2
+[0m14:53:55.713496 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2
+[0m14:53:55.713651 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_sales_sale_date.b84165df57
+[0m14:53:55.713810 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_sales_sale_amount.a4cb375de2, now test.sales_project.not_null_stg_sales_sale_date.b84165df57)
+[0m14:53:55.713956 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_sales_sale_date.b84165df57
+[0m14:53:55.715645 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_sales_sale_date.b84165df57"
+[0m14:53:55.717952 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_sales_sale_date.b84165df57
+[0m14:53:55.718246 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_sales_sale_date.b84165df57
+[0m14:53:55.718416 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_stg_sales_uuid.3a195ca69f
+[0m14:53:55.718620 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_sales_sale_date.b84165df57, now test.sales_project.not_null_stg_sales_uuid.3a195ca69f)
+[0m14:53:55.718780 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_stg_sales_uuid.3a195ca69f
+[0m14:53:55.720642 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_stg_sales_uuid.3a195ca69f"
+[0m14:53:55.721332 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_stg_sales_uuid.3a195ca69f
+[0m14:53:55.721612 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_stg_sales_uuid.3a195ca69f
+[0m14:53:55.721778 [debug] [Thread-1 (]: Began running node test.sales_project.unique_stg_sales_uuid.a53b0e1248
+[0m14:53:55.721962 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_stg_sales_uuid.3a195ca69f, now test.sales_project.unique_stg_sales_uuid.a53b0e1248)
+[0m14:53:55.722128 [debug] [Thread-1 (]: Began compiling node test.sales_project.unique_stg_sales_uuid.a53b0e1248
+[0m14:53:55.724400 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.unique_stg_sales_uuid.a53b0e1248"
+[0m14:53:55.725172 [debug] [Thread-1 (]: Began executing node test.sales_project.unique_stg_sales_uuid.a53b0e1248
+[0m14:53:55.725454 [debug] [Thread-1 (]: Finished running node test.sales_project.unique_stg_sales_uuid.a53b0e1248
+[0m14:53:55.725618 [debug] [Thread-1 (]: Began running node test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5
+[0m14:53:55.725797 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.unique_stg_sales_uuid.a53b0e1248, now test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5)
+[0m14:53:55.726034 [debug] [Thread-1 (]: Began compiling node test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5
+[0m14:53:55.727998 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5"
+[0m14:53:55.729094 [debug] [Thread-1 (]: Began executing node test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5
+[0m14:53:55.729365 [debug] [Thread-1 (]: Finished running node test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5
+[0m14:53:55.729525 [debug] [Thread-1 (]: Began running node test.sales_project.unique_mart_sales_uuid.9e387c7faa
+[0m14:53:55.729701 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sales_project.not_null_mart_sales_sales_amount_dollars.b0da0d56c5, now test.sales_project.unique_mart_sales_uuid.9e387c7faa)
+[0m14:53:55.729855 [debug] [Thread-1 (]: Began compiling node test.sales_project.unique_mart_sales_uuid.9e387c7faa
+[0m14:53:55.731563 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_project.unique_mart_sales_uuid.9e387c7faa"
+[0m14:53:55.733670 [debug] [Thread-1 (]: Began executing node test.sales_project.unique_mart_sales_uuid.9e387c7faa
+[0m14:53:55.733923 [debug] [Thread-1 (]: Finished running node test.sales_project.unique_mart_sales_uuid.9e387c7faa
+[0m14:53:55.734434 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:53:55.734569 [debug] [MainThread]: Connection 'test.sales_project.unique_mart_sales_uuid.9e387c7faa' was properly closed.
+[0m14:53:55.735709 [debug] [MainThread]: Command end result
+[0m14:53:55.756156 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt/target/manifest.json
+[0m14:53:55.759857 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt/target/semantic_manifest.json
+[0m14:53:55.763745 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/reyleroux/Documents/cloudandthings/cat-rnd-mwaa-dbt/dbt/target/run_results.json
+[0m14:53:55.807874 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 3.7087398, "process_in_blocks": "0", "process_kernel_time": 0.309146, "process_mem_max_rss": "175259648", "process_out_blocks": "0", "process_user_time": 1.69569}
+[0m14:53:55.808284 [debug] [MainThread]: Command `dbt compile` succeeded at 14:53:55.808228 after 3.71 seconds
+[0m14:53:55.808514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb16db0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11189a710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11189a530>]}
+[0m14:53:55.808742 [debug] [MainThread]: Flushing usage events
+[0m14:53:56.795622 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,50 @@
+models:
+  - name: stg_customers
+    description: "Staging table for customer data"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Name of the customer"
+        tests:
+          - not_null
+  - name: stg_products
+    description: "Staging table for product data"
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product"
+        tests:
+          - not_null
+          - unique
+      - name: product_description
+        description: "Description of the product"
+        tests:
+          - not_null
+  - name: stg_sales
+    description: "Staging table for sales data"
+    columns:
+      - name: uuid
+        description: "Unique identifier for each sale record"
+        tests:
+          - not_null
+          - unique
+      - name: sale_date
+        description: "Date when the sale was made"
+        tests:
+          - not_null
+      - name: customer_id
+        description: "Identifier for the customer who made the purchase"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Identifier for the product sold"
+        tests:
+          - not_null
+      - name: sale_amount
+        description: "Amount of the sale"
+        tests:
+          - not_null
+

@@ -1,0 +1,21 @@
+uuid,customer_id,customer_name,sale_date,sale_amount,product_id,product_description
+b1a7e1c1,1,Alice Smith,2024-05-03,120.50,101,Wireless Mouse
+c2b8f2d2,2,Bob Johnson,2024-05-05,75.00,102,USB Keyboard
+d3c9g3e3,3,Carol Lee,2024-05-07,200.00,103,27" Monitor
+e4d0h4f4,4,David Kim,2024-05-10,50.25,104,Laptop Stand
+f5e1i5g5,5,Eva Brown,2024-05-12,180.00,105,Noise Cancelling Headphones
+a6f2j6h6,1,Alice Smith,2024-05-18,90.00,106,Webcam
+b7g3k7i7,2,Bob Johnson,2024-05-20,110.75,107,External Hard Drive
+c8h4l8j8,3,Carol Lee,2024-05-22,60.00,108,USB-C Hub
+d9i5m9k9,4,David Kim,2024-05-25,130.00,109,Mechanical Keyboard
+e0j6n0l0,5,Eva Brown,2024-05-28,95.50,110,Wireless Charger
+f1k7o1m1,1,Alice Smith,2024-06-02,140.00,101,Wireless Mouse
+a2l8p2n2,2,Bob Johnson,2024-06-04,85.00,102,USB Keyboard
+b3m9q3o3,3,Carol Lee,2024-06-06,210.00,103,27" Monitor
+c4n0r4p4,4,David Kim,2024-06-09,70.00,104,Laptop Stand
+d5o1s5q5,5,Eva Brown,2024-06-11,160.00,105,Noise Cancelling Headphones
+e6p2t6r6,1,Alice Smith,2024-06-15,100.00,106,Webcam
+f7q3u7s7,2,Bob Johnson,2024-06-17,120.00,107,External Hard Drive
+a8r4v8t8,3,Carol Lee,2024-06-19,80.00,108,USB-C Hub
+b9s5w9u9,4,David Kim,2024-06-22,150.00,109,Mechanical Keyboard
+c0t6x0v0,5,Eva Brown,2024-06-25,105.00,110,Wireless Charger

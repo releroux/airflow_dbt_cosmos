@@ -1,0 +1,12 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://cat-rnd-mwaa-dbt-bucket/airflow/dbt/staging/
+      s3_data_dir: s3://cat-rnd-mwaa-dbt-bucket/airflow/data/
+      region_name: af-south-1
+      schema: default
+      database: awsdatacatalog
+
+

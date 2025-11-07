@@ -1,0 +1,22 @@
+models:
+  - name: mart_sales
+    description: "Mart table for aggregated sales data"
+    columns:
+      - name: uuid
+        description: "Unique identifier for each sale record"
+        tests:
+          - unique
+      - name: sale_date
+        description: "Date when the sale was made"
+      - name: customer_id
+        description: "Identifier for the customer who made the purchase"
+      - name: customer_name
+        description: "Name of the customer"
+      - name: product_id
+        description: "Identifier for the product sold"
+      - name: product_description
+        description: "Description of the product"
+      - name: sales_amount_dollars
+        description: "Total amount of sales for the given date"
+        tests:
+          - not_null

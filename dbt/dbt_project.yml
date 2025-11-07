@@ -1,0 +1,25 @@
+name: 'sales_project'
+version: "1.0.0"
+profile: default
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+models:
+  sales_project:  # Changed from my_dbt_project
+    staging:
+      +materialized: incremental
+      +on_schema_change: "fail"
+      +incremental_strategy: "insert_overwrite"
+      +table_format: "iceberg"
+    marts:
+      +materialized: incremental
+      +incremental_strategy: "insert_overwrite"
+      +on_schema_change: "fail"
+      +table_format: "iceberg"
+
+seeds:
+  sales_project:
+    sales_data:
+      +quote_columns: false
+      +delimiter: ","
