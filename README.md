@@ -1,17 +1,3 @@
-terraform -chdir=terraform/ destroy -auto-approve
-
-
-terraform -chdir=terraform/ init
-terraform -chdir=terraform/ plan
-terraform -chdir=terraform/ apply -auto-approve
-terraform -chdir=terraform/ destroy -auto-approve
-terraform -chdir=terraform/ output
-
-
-https://github.com/hitchon1/setup-airflow-ec2
-
-
-
 # Airflow + dbt on EC2 with Terraform
 
 This repository contains infrastructure as code (IaC) to deploy Apache Airflow with dbt (data build tool) on an AWS EC2 instance using Terraform. The setup uses Docker Compose to run Airflow and includes automatic synchronization of DAGs and dbt projects from S3.
