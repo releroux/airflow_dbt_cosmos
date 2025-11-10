@@ -1,13 +1,12 @@
 general:
-  resource_prefix: "cat-rnd-mwaa-dbt"
-  vpc_id: "vpc-0dfa99e2ec6455b14"
-  # subnet_ids: ["subnet-092e811ee8f19ff4f", "subnet-05ae7fb60603d698b"] # App
-  subnet_ids: ["subnet-016e10f06301bd104", "subnet-0c049430ef83c8988"] # Public
-  security_group_ids: ["sg-0b5e241790701b30e"]
+  resource_prefix: # Add your prefix for all resources created
+  vpc_id: # Add your vpc id here
+  subnet_ids:  # Add your subnet ids here
+  security_group_ids: # add your security group
   tags:
     iac: "terraform"
     environment: "rnd"
-    project: "cat-rnd-mwaa-dbt"
+    project: "airflow-costmos"
 
 lambda:
   lambdaRuntime: python3.13
