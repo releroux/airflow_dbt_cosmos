@@ -37,13 +37,14 @@ flowchart LR
 - Custom Docker image with Airflow + dbt pre-installed
 - Astronomer Cosmos for dbt integration
 - Automatic DAG parsing and execution
-- Web UI accessible on port 8080
+- Web UI accessible on port 8080 via EC2 public DNS address
 
 ### dbt Integration
-- Cosmos DbtDag for Airflow-native dbt orchestration
-- Configured for Athena with Iceberg table format
-- Incremental materialization strategy
-- Staging and marts data models
+- Cosmos DbtDag: Converts dbt models into native Airflow tasks for seamless orchestration
+- Athena + Iceberg: Configured for AWS Athena with Iceberg table format support
+- Auto DAG Generation: Creates Airflow DAGs from dbt project structure
+
+![Cosmos DAG Visualization](./dag_cosmos.png)
 
 ### Infrastructure
 - **Terraform Modules**:
@@ -56,8 +57,7 @@ flowchart LR
 - AWS CLI configured with appropriate credentials
 - Terraform >= 1.0
 - AWS account with permissions to create EC2, S3, IAM resources
-- dbt project files in `/dbt` directory
-- Airflow DAGs in `/dags` directory
+- VPC, security groups, and subnets assumed to be already configured
 
 ## Quick Start
 
@@ -135,31 +135,6 @@ The Airflow image includes:
 - Astronomer Cosmos
 - AWS CLI and boto3
 
-## Configuration
-
-### Customizing the Deployment
-
-Edit `terraform/variables.tf` or create a `terraform.tfvars` file to customize:
-- Instance type
-- Region
-- AMI
-- Resource naming prefix
-
-### dbt Configuration
-
-The dbt project is configured in `dbt/dbt_project.yml`:
-- Incremental materialization
-- Iceberg table format
-- Insert-overwrite strategy
-- Staging and marts layers
-
-### Airflow DAG Configuration
-
-Example DAG (`dags/dbt_version_test.py`) shows:
-- Cosmos DbtDag configuration
-- Athena profile setup
-- Local execution mode
-- OpenLineage disabled
 
 ## Cleanup
 
@@ -168,35 +143,6 @@ To destroy all created resources:
 ```bash
 terraform -chdir=terraform/ destroy -auto-approve
 ```
-
-## Troubleshooting
-
-### Check EC2 Bootstrap Logs
-```bash
-# SSH into the instance
-ssh -i airflow-poc-key.pem ubuntu@<EC2_PUBLIC_IP>
-
-# Monitor initialisation logs
-tail -f /var/log/cloud-init-output.log
-```
-
-### Check EC2 Instance Logs
-```bash
-# SSH into the instance
-ssh -i airflow-poc-key.pem ubuntu@<EC2_PUBLIC_IP>
-
-# View Docker logs
-sudo docker-compose -f /opt/airflow/docker-compose.yaml logs
-
-# View sync logs
-sudo tail -f /var/log/airflow-dag-sync.log
-sudo tail -f /var/log/airflow-dbt-sync.log
-```
-
-### Common Issues
-- **DAGs not appearing**: Check S3 sync logs and ensure files are uploaded to S3
-- **dbt connection errors**: Verify Athena credentials and S3 bucket permissions
-- **Airflow not starting**: Check Docker logs and ensure EC2 instance has enough resources
 
 ## References
 
